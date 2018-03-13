@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+#my_apps:
+    'blog',
 #ogiginal_apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#my_apps:
-    'blog'
+
 #added_apps:
 ]
 
@@ -58,8 +59,8 @@ ROOT_URLCONF = 'nebulablog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [],
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], #for overwriting admin templates
+        'DIRS': [],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')], #for overwriting admin templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
