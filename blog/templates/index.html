@@ -1,0 +1,35 @@
+<!doctype html>
+{% extends "base_generic.html" %}
+{% block content %}
+{% load static %}
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Our Stockholm Story</title>
+  </head>
+
+<body>
+  {% if blog_post_list %}
+      {% for post in blog_post_list %}
+      <a href ="{% url 'post_detail' post.id post.post_slug %}" class="btn btn-blue-title btn-100percent">{{post.post_title}}</a>
+    </br>
+    {% if post.post_image %}
+    <img src ='{{ post.post_image.url}}' class='img-responsive' />
+    {% endif %}
+         </br>
+        {{post.post_body}} </br>
+        {{post.post_author}} </br>
+        {{post.post_publish}} </br>
+
+      {% endfor %}
+  {% else %}
+    Please post some posts!
+  {% endif %}
+
+</body>
+{% endblock %}
