@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from .settings_secret import *
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,13 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c8&*b%j64g73nuzw_je1&1%44@)+jox+a6zf8g^8v&wgn$5a0r'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,24 +76,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'nebulablog.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-##################
-#DONT TOUCH FOR DEPLOY HEROKU OR ANYTHING! IT OK --->
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nebulablogdb',
-        'USER': 'admin',
-        'PASSWORD': '224466integer',
-        'HOST':'localhost',
-        #'HOST': '127.0.0.1',
-        'PORT': '',
-    }
- }
-##################
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -142,7 +124,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static_files'),
 )
 #added for static files
-
 
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
